@@ -1,6 +1,8 @@
 # Technical scoring
 
-The jury scores three dimensions: business, agile and technical, 10 points each. This page describes the **technical dimension**: what you built and whether it holds up. Every criterion names where the juror looks. Impressions are not scored, evidence is.
+The jury scores three dimensions with 10 points each: **business** (product vision and pitch), **agile** (how you work as a team) and **technical**. This page describes only the **technical dimension**: what you built and whether it holds up. Its criteria and preconditions count only for the technical score; the business and agile jurors use their own criteria.
+
+Every criterion names where the technical juror looks. Impressions are not scored, evidence is.
 
 ## Overview
 
@@ -86,7 +88,7 @@ Working code scores higher than a mockup, and a mockup scores higher than a conc
 
 ## Preconditions
 
-- **GitHub.** Your work is managed in a GitHub repository created from the hackathon template. At least one team member has a GitHub account. The jury can read the repository (public, or the jurors are invited).
+- **Repository.** The jury can read your Git repository, including its history. We strongly recommend GitHub, with a repository created from the hackathon template and set to public (or the jurors invited). GitHub itself is not scored.
 - **Commit history.** All commits lie inside the hackathon window (Friday 09:00 to Tuesday 11:00) and are spread over several days. Commits by several people are not required, so pair programming is fine. If the history is missing, lies outside the window or consists of one bulk commit at the end, the technical score is capped at 5 points.
 - **Own work.** Public libraries and templates are allowed, pre-built solutions are not. AI tools are allowed; the team must be able to explain everything it submits.
 - **Mockup and concept teams** commit exports, screenshots or documents each day, so their history is visible too.

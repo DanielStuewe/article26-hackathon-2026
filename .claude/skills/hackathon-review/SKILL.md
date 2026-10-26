@@ -5,7 +5,9 @@ description: Review the team repository against the hackathon technical scoring 
 
 # Hackathon review
 
-Goal: show the team, criterion by criterion, which evidence exists and what is missing, so they can close the gaps in time. Follows guide 4.2.
+Goal: show the team, criterion by criterion, which evidence the technical jury will find and what is missing, so they can close the gaps in time. Follows guide 4.2. This review covers only the technical dimension; business and agile are scored separately with their own criteria.
+
+In the report, always name a criterion by its title, with the number only as a reference (e.g. "Business rules and unit tests (criterion 2)"), and say in one phrase what it asks for. The team does not know the numbers by heart.
 
 **Never give points or a score.** That is the jury's job. Report findings and next steps only.
 
@@ -15,8 +17,8 @@ Free AI plans allow few requests: do the whole review in one go and answer in on
 
 1. Read `docs/scoring.md`, `docs/product-vision.md` (note the track) and `README.md`. List the files with `git ls-files`.
 2. **Preconditions**
-   - `git remote -v` points to github.com.
-   - `git log --format="%ad %an %s" --date=iso`: commits after Fri 30 Oct 2026 09:00, spread over the days, no single bulk commit, at least two meaningful commits per day. Name days without commits.
+   - `git remote -v`: a GitHub remote is strongly recommended, not scored. Without any remote, remind the team that the jury must be able to read the repository.
+   - `git log --format="%ad %an %s" --date=iso`: the history is spread over the hackathon days, with no single bulk commit and at least two meaningful commits per day. Name days without commits. Do not be strict about exact times.
    - Uncommitted or unpushed work: `git status -sb`.
 3. **Criterion 1 · Persistence:** schema, migrations or entities exist; data is stored on the server; `docs/domain.md` has an ER diagram without `TODO`.
 4. **Criterion 2 · Rules and tests:** find the business rules in the domain code. For each: is it enforced on the server? Is there an accept test and a reject test? Is there a single test command in the README? Rules that exist only in the UI are a finding. Use the checklist of the `business-rule` skill.

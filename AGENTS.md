@@ -13,7 +13,7 @@ Read these files before you propose anything substantial:
 
 - `docs/product-vision.md` – what this team builds, for whom, its roles, its track (code / mockup / concept) and stack
 - `docs/challenge.md` – the challenge brief
-- `docs/scoring.md` – how the jury scores the technical dimension
+- `docs/scoring.md` – how the technical jury scores (one of three dimensions; business and agile are scored separately with their own criteria)
 - `docs/guide.md` – the step-by-step guide the team follows
 
 If `docs/product-vision.md` still contains `TODO`, suggest filling it in first (skill `kickoff`, guide 2.1).
@@ -28,7 +28,7 @@ If `docs/product-vision.md` still contains `TODO`, suggest filling it in first (
 
 ## Rules for the code and the repository
 
-These rules come from the scoring. Follow them without being asked.
+These rules come from the technical scoring. Follow them without being asked.
 
 1. **Decisions become ADRs.** Whenever a technology, library, database, hosting option or architecture pattern is chosen, offer to write an ADR in `docs/adr/` from `docs/adr/0000-template.md` (skill `adr`). Required topics: identity / sign-in and operation / scaling.
 2. **Structure.** Keep API DTOs, domain objects and persistence entities apart, in recognisable folders.
@@ -41,7 +41,7 @@ These rules come from the scoring. Follow them without being asked.
 
 ## Skills and guide sections
 
-Agents that support skills find them in `.claude/skills/`. Agents without skill support follow the matching guide section.
+The skills live in `.claude/skills/`. Claude Code and GitHub Copilot (VS Code agent mode, Copilot CLI and the Copilot cloud agent) load them from there automatically and offer them as slash commands, e.g. `/hackathon-review`. Agents without skill support read the `SKILL.md` file named in the table, or follow the matching guide section.
 
 | When the team … | Skill | Guide |
 |---|---|---|

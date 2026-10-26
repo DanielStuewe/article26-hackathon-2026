@@ -5,9 +5,9 @@
 >
 > 1. **Start here:** read the [Build Guide](docs/guide.md) and the [challenge](docs/challenge.md).
 > 2. Fill in [docs/product-vision.md](docs/product-vision.md) together.
-> 3. Keep this README up to date as you build. The jury starts your product **from this README alone** ([how they check](docs/scoring.md#run-check-for-the-juror)).
+> 3. Keep this README up to date as you build. The technical jury starts your product **from this README alone** ([how they check](docs/scoring.md#run-check-for-the-juror)).
 >
-> Using an AI coding agent (GitHub Copilot, Claude Code, Cursor …)? It reads [AGENTS.md](AGENTS.md) automatically. Say *"start our kickoff"* to begin, or *"review our repo against the hackathon scoring"* at any time.
+> Using an AI coding agent (GitHub Copilot, Claude Code, Cursor …)? It reads [AGENTS.md](AGENTS.md) and the skills in `.claude/skills/` automatically. In GitHub Copilot Chat (agent mode) or Claude Code, type `/kickoff` to begin, or `/hackathon-review` at any time.
 >
 > Looking for an example? The `blueprint` branch contains a small Next.js + PostgreSQL app from an earlier edition. It is one possible approach, not a requirement.
 <!-- ===== END OF TEMPLATE NOTE ===== -->
@@ -55,7 +55,7 @@ TODO   # one command that runs all tests
 
 ## Evidence map
 
-Where the jury finds the evidence for each [technical criterion](docs/scoring.md).
+Where the technical jury finds the evidence for each [technical criterion](docs/scoring.md).
 
 | Criterion | Evidence |
 |---|---|

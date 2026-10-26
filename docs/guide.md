@@ -4,10 +4,12 @@ This guide walks your team through the hackathon from the first setup to the fin
 
 The guide has four phases. Each step has the same shape:
 
-- **Why:** which scoring criterion the step helps with (see [scoring.md](scoring.md))
+- **Why:** what the technical jury looks for in this step, with a link to the matching criterion in [scoring.md](scoring.md)
 - **Do:** what to do, written so a person can do it alone, with or without AI
 - **Prompt:** a ready-to-copy text for any AI chat (ChatGPT, Copilot, Claude, Gemini …)
 - **Done when:** a short checklist to know when you are done
+
+> **About the scoring.** The jury scores three dimensions with 10 points each: **business** (product vision and pitch), **agile** (how you work as a team) and **technical**. This guide covers the technical dimension. Its criteria in [scoring.md](scoring.md) count only for the technical score; the business and agile jurors use their own criteria.
 
 > **You do not need AI to use this guide.** Every step can be done by hand. If you use an AI assistant, the prompts save time. If you use a coding agent such as GitHub Copilot in VS Code or Claude Code, this repository already contains *skills* that run the steps for you (see [Working with AI](#14-working-with-ai-and-without)).
 
@@ -28,15 +30,15 @@ Seven things to know before you start:
 
 1. **Read the challenge** in [challenge.md](challenge.md). The core every team delivers: *an external consultant books working time against one of the client's orders, and the client sees what that does to the order's budget.*
 2. **You choose the technology.** There is no required language, framework or database. The `blueprint` branch of this repository is one example, not the default.
-3. **Working code scores higher than a mockup, and a mockup scores higher than a concept on paper.** All three are allowed. See [1.3 Choose your track](#13-choose-your-track).
-4. **Your work lives on GitHub.** At least one person in your team needs a GitHub account. Better: everybody has one.
-5. **Your commits must lie inside the hackathon window**, Friday 09:00 to Tuesday 11:00, spread over several days. One big commit at the end caps your technical score.
+3. **In the technical score, working code counts more than a mockup, and a mockup more than a concept on paper.** All three are allowed, and the business and agile scores do not depend on it. See [1.3 Choose your track](#13-choose-your-track).
+4. **We strongly recommend GitHub** for your repository. At least one person in your team needs a GitHub account. Better: everybody has one, which also gives everybody free access to GitHub Copilot.
+5. **Commit throughout the hackathon.** The technical jury reads your Git history to see how your work grew from Friday to Tuesday. One big commit at the end caps your technical score.
 6. **AI is allowed, not required.** Whatever you hand in, your team must be able to explain.
-7. **The jury starts your product from your README alone**, within 5 minutes. Plan for this from day one, not on Tuesday morning.
+7. **The technical jury starts your product from your README alone**, within 5 minutes. Plan for this from day one, not on Tuesday morning.
 
 ### 1.2 Set up
 
-**Why:** preconditions for all criteria.
+**Why:** the technical jury reads your code, documents and Git history in your repository. A shared repository from day one keeps everything in one place ([preconditions](scoring.md#preconditions)).
 
 **Before Friday** (at home, with good internet):
 
@@ -49,7 +51,7 @@ Seven things to know before you start:
 
 **Friday from 09:00:**
 
-- [ ] One person opens this template repository on GitHub and clicks **Use this template → Create a new repository**. Name it after your product. Choose **Public**, so the jury can read it. (Do this after 09:00 on Friday: the first commit must lie inside the hackathon window.)
+- [ ] One person opens this template repository on GitHub and clicks **Use this template → Create a new repository**. Name it after your product. Choose **Public**, so the jury can read it. Create it on Friday morning, so the history shows the work of the hackathon.
 - [ ] Invite your teammates: *Settings → Collaborators → Add people*.
 - [ ] Everybody clones the repository: `git clone https://github.com/<your-team>/<your-repo>.git`
 - [ ] Fill in [product-vision.md](product-vision.md) together (see [2.1](#21-write-down-your-product-vision)).
@@ -58,7 +60,7 @@ Seven things to know before you start:
 
 ### 1.3 Choose your track
 
-**Why:** the track decides how many technical points you can reach.
+**Why:** the track decides how many technical points you can reach ([code, mockup and concept](scoring.md#code-mockup-and-concept)). It does not limit your business or agile score.
 
 | Track | What you deliver | Max. technical points |
 |---|---|---|
@@ -68,7 +70,7 @@ Seven things to know before you start:
 
 Be honest about your team. If two people have built a web application before, go for code. If nobody has, a strong mockup plus good decisions is a respectable result, and your concept still earns points in the business and agile dimensions.
 
-**A good path for most teams:** start with a quick mockup on Friday (it counts as a building block anyway, see criterion 4), then build the core flow in code. If the code does not work in the end, you still have the mockup.
+**A good path for most teams:** start with a quick mockup on Friday (it counts as a building block under [criterion 4 · Architecture and engineering practice](scoring.md#criterion-4--architecture-and-engineering-practice-02) anyway), then build the core flow in code. If the code does not work in the end, you still have the mockup.
 
 **Done when:** your track is written into [product-vision.md](product-vision.md) by Friday noon.
 
@@ -80,7 +82,7 @@ There are three ways to work with this guide. Mix them as you like.
 |---|---|
 | **No AI** | Follow the *Do* lists and the templates in `docs/`. Everything works by hand. |
 | **An AI chat** in the browser (ChatGPT, Gemini, Claude, Copilot on github.com) | Start every new chat with the **context prompt** below, then copy the prompt of the step you are working on. |
-| **A coding agent** in your editor (GitHub Copilot in VS Code, Claude Code, Cursor …) | The agent reads [AGENTS.md](../AGENTS.md) and the skills in `.claude/skills/` automatically. Just say what you want, for example *"help us pick a stack"* or *"review our repo against the scoring"*. |
+| **A coding agent** in your editor (GitHub Copilot in VS Code, Claude Code, Cursor …) | The agent reads [AGENTS.md](../AGENTS.md) and the skills in `.claude/skills/` automatically. Just say what you want, for example *"help us pick a stack"* or *"review our repo against the scoring"*. In GitHub Copilot Chat (agent mode) or Claude Code, type `/` to see the skills, for example `/kickoff` or `/hackathon-review`. |
 
 **The context prompt.** An AI knows nothing about your product. Paste this at the start of every new chat, together with the content of your [product-vision.md](product-vision.md):
 
@@ -106,7 +108,7 @@ Rules for your answers:
 - **Read what you get.** The jury will ask you about your code. If nobody in the team can explain a file, do not commit it.
 - **Let AI propose, decide yourselves.** Ask for options. Your decision and its reason go into an ADR (see [2.5](#25-record-decisions-adrs)).
 - **No secrets in prompts.** Do not paste passwords, tokens or real personal data.
-- **AI inside your product** (for example "ask in plain language") is welcome but optional. It must have a switch that replaces the AI with a fake answer, because the jury starts your product without paid API keys.
+- **AI inside your product** (for example "ask in plain language") is welcome but optional. It must have a switch that replaces the AI with a fake answer, because the technical jury starts your product without paid API keys.
 - **Free AI has limits.** Copilot Free allows a limited number of chat requests per month and person. Do not waste them on things a search engine can answer.
 
 ---
@@ -136,7 +138,7 @@ At the end, fill in this template with our answers:
 
 ### 2.2 Pick a simple stack
 
-**Why:** criteria 4 and 5. A stack you know beats a stack that is fashionable.
+**Why:** the technical jury looks for a clear structure ([criterion 4 · Architecture and engineering practice](scoring.md#criterion-4--architecture-and-engineering-practice-02)) and starts your product from the README ([criterion 5 · Runs from the README](scoring.md#criterion-5--runs-from-the-readme-01)). Both are much easier with a stack you know than with one that is fashionable.
 
 **Do:**
 
@@ -175,7 +177,7 @@ Do not pick one for us. End with 3 questions that help us decide.
 
 ### 2.3 Model the domain
 
-**Why:** criterion 1 (persistence and data model).
+**Why:** the technical jury checks that your data is stored on the server, survives a restart and follows a documented model. A small implementation plus a diagram of the next stage is enough for full points ([criterion 1 · Persistence and data model](scoring.md#criterion-1--persistence-and-data-model-02)).
 
 **Do:**
 
@@ -200,7 +202,7 @@ not in our vision.
 
 ### 2.4 Roles and privacy
 
-**Why:** criterion 3 (roles, permissions and data privacy). Full points are possible **without implementation**.
+**Why:** the technical jury checks that you decided who may see and do what, with clearly different roles and the personal data involved. A written concept is enough for full points; implementation is optional ([criterion 3 · Roles, permissions and data privacy](scoring.md#criterion-3--roles-permissions-and-data-privacy-02)).
 
 **Do:**
 
@@ -228,7 +230,7 @@ Keep the roles clearly different from each other, not just "admin" and "user".
 
 ### 2.5 Record decisions (ADRs)
 
-**Why:** criterion 4, building block B. ADRs also make your pitch stronger: you can explain *why*.
+**Why:** three ADRs are one of the building blocks the technical jury counts under [criterion 4 · Architecture and engineering practice](scoring.md#criterion-4--architecture-and-engineering-practice-02). They also help in your pitch, because you can explain why you built it this way.
 
 An **Architecture Decision Record** is half a page: the context, the decision, the alternatives you considered and the consequences. Copy [adr/0000-template.md](adr/0000-template.md) to a new file with the next number.
 
@@ -264,14 +266,14 @@ Maximum half a page. Do not invent facts about our product.
 
 ### 3.1 Build a walking skeleton
 
-**Why:** criteria 1, 4 and 5. A thin version that runs end to end beats many half-finished features.
+**Why:** a thin version that runs end to end already covers much of what the technical jury looks for: stored data ([criterion 1 · Persistence and data model](scoring.md#criterion-1--persistence-and-data-model-02)), a clear structure, API documentation and containers ([criterion 4 · Architecture and engineering practice](scoring.md#criterion-4--architecture-and-engineering-practice-02)), and a start from the README ([criterion 5 · Runs from the README](scoring.md#criterion-5--runs-from-the-readme-01)). In the demo it also beats many half-finished features.
 
 A **walking skeleton** is the smallest version of your product that goes through every layer: one screen, one API call, one table, one test, started with documented commands. Build it first, then make it thicker.
 
 **Do:**
 
 1. Create the project with the official starter of your framework.
-2. Use a **clear structure** (building block A). Keep apart:
+2. Use a **clear structure** (criterion 4, block A). Keep apart:
    - **API objects (DTOs):** what goes over the wire
    - **Domain objects:** your business terms and rules
    - **Persistence entities:** what is stored in the database
@@ -279,9 +281,9 @@ A **walking skeleton** is the smallest version of your product that goes through
    Folder names should show it, for example `api/`, `domain/`, `persistence/`.
 3. Add **seed data** and **one demo user per role**, created automatically on first start.
 4. Put every configuration value into **`.env.example`** with a safe default. Never commit real secrets.
-5. Optional building blocks for criterion 4:
-   - **API documentation** (block D): OpenAPI / Swagger UI. Many frameworks generate it.
-   - **Containers** (block E): a `compose.yaml` that starts database, backend and frontend.
+5. Optional building blocks for criterion 4 (architecture and engineering practice):
+   - **API documentation** (criterion 4, block D): OpenAPI / Swagger UI. Many frameworks generate it.
+   - **Containers** (criterion 4, block E): a `compose.yaml` that starts database, backend and frontend.
 6. Write the commands to install, run and test into the [README](../README.md) **right away**. Add each new step the moment you need it.
 
 ```prompt
@@ -308,7 +310,7 @@ README sections Setup, Run and Test.
 
 ### 3.2 Business rules and tests
 
-**Why:** criterion 2 (business rules and unit tests), the criterion with the most points.
+**Why:** the technical jury checks that your rules live in one place in the domain, are enforced on the server and are covered by tests that also prove a rejection. This criterion carries the most technical points ([criterion 2 · Business rules and unit tests](scoring.md#criterion-2--business-rules-and-unit-tests-03)).
 
 **Do:**
 
@@ -344,7 +346,7 @@ Explain the code briefly so we can explain it to the jury.
 
 ### 3.3 Make it yours (UI and mockup)
 
-**Why:** criterion 4 (block F, mockup) and criterion 3 (role views). A good UI also wins the business pitch.
+**Why:** a clickable mockup counts as a building block under [criterion 4 · Architecture and engineering practice](scoring.md#criterion-4--architecture-and-engineering-practice-02), and views per role make your concept under [criterion 3 · Roles, permissions and data privacy](scoring.md#criterion-3--roles-permissions-and-data-privacy-02) more convincing. A good UI also strengthens your pitch, which the business jury scores.
 
 Five teams, one challenge: if all five products look like the same template, nobody stands out. Design for *your* users.
 
@@ -353,7 +355,7 @@ Five teams, one challenge: if all five products look like the same template, nob
 1. Decide **who** looks at the screen and **what one thing** they must see in 3 seconds (for example: *"Will my budget last?"*).
 2. Sketch the main screens on paper first: one per role.
 3. Pick a **visual direction** that fits your product's character: calm and precise for finance, fast and mobile for consultants … Choose a colour palette and a font on purpose.
-4. **Mockup** (block F): Figma, Penpot, or plain HTML pages that link to each other. Commit exports or the HTML files to `docs/mockup/` every day.
+4. **Mockup** (criterion 4, block F): Figma, Penpot, or plain HTML pages that link to each other. Commit exports or the HTML files to `docs/mockup/` every day.
 5. Build the real UI from the mockup. Re-use the mockup in your pitch.
 
 ```prompt
@@ -372,7 +374,7 @@ that fits our domain.
 
 ### 3.4 Git like a team
 
-**Why:** precondition and criterion 4 (block C).
+**Why:** the technical jury reads your Git history to see that you built the work yourself during the hackathon ([preconditions](scoring.md#preconditions)). A steady history also counts as a building block under [criterion 4 · Architecture and engineering practice](scoring.md#criterion-4--architecture-and-engineering-practice-02).
 
 **Do:**
 
@@ -399,16 +401,16 @@ Suggest how to split this into small commits with clear messages
 
 ### 4.1 README and run check
 
-**Why:** criterion 5 (runs from the README) and the evidence map for criteria 1 to 4.
+**Why:** the technical jury starts your product from the README alone ([criterion 5 · Runs from the README](scoring.md#criterion-5--runs-from-the-readme-01)) and uses your evidence map to find the proof for the other technical criteria quickly.
 
-On Tuesday, the jury clones your repository, reads **only** your README and tries to start the product within **5 minutes**. First a coding agent tries, then a juror by hand. Nobody asks you questions. The full procedure is in [scoring.md](scoring.md#run-check-for-the-juror).
+On Tuesday, the technical jury clones your repository, reads **only** your README and tries to start the product within **5 minutes**. First a coding agent tries, then a juror by hand. Nobody asks you questions. The full procedure is in [scoring.md](scoring.md#run-check-for-the-juror).
 
 **Do:**
 
 1. Keep the six sections of the [README](../README.md): *Prerequisites · Setup · Run · Test · Demo users · Evidence map.*
 2. Write **exact commands, versions and ports**, not prose. "Install dependencies" is not a command; `npm ci` is.
 3. **Demo users:** one per role, with how to sign in.
-4. **Evidence map:** for criteria 1 to 4, link the file or folder where the jury finds the proof.
+4. **Evidence map:** for each technical criterion (data model, rules and tests, roles and privacy, architecture), link the file or folder where the jury finds the proof.
 5. **Run check, Monday evening and Tuesday 10:00 at the latest:** a team member who did *not* set up the project clones the repository into a new folder and follows the README word by word. Every place they get stuck is a bug in the README.
 
 ```prompt
@@ -428,11 +430,11 @@ that exists. Do not guess missing steps.
 
 ### 4.2 Final review
 
-**Why:** all criteria. Find gaps while there is still time to close them.
+**Why:** find gaps in the technical criteria while there is still time to close them.
 
-**Do:** go through [scoring.md](scoring.md) criterion by criterion and check your repository against it. Do this at least on **Sunday evening** and **Monday evening**, not only on Tuesday.
+**Do:** go through the technical criteria in [scoring.md](scoring.md) one by one and check your repository against them. Do this at least on **Sunday evening** and **Monday evening**, not only on Tuesday.
 
-**With a coding agent:** say *"review our repo against the hackathon scoring"*. The `hackathon-review` skill checks every criterion and the preconditions, and lists what is missing, for example a technology without an ADR, a rule without a reject test, or a README section that is empty. It does not give points: that is the jury's job.
+**With a coding agent:** say *"review our repo against the hackathon scoring"*, or type `/hackathon-review` in the chat of GitHub Copilot or Claude Code. The `hackathon-review` skill checks every technical criterion and the preconditions, and lists what is missing, for example a technology without an ADR, a rule without a reject test, or a README section that is empty. It does not give points: that is the job of the jury.
 
 **With an AI chat:**
 
@@ -444,7 +446,7 @@ Here is our README and the list of files in our repository:
 {{paste README.md}}
 {{paste the output of "git ls-files"}}
 
-For each criterion 1 to 5 and for the preconditions, tell us what
+For each technical criterion and for the preconditions, tell us what
 evidence you can find and what is missing. Be concrete: name files.
 Do not give points. End with the 3 most valuable things we can still
 do in the time left.
