@@ -1,51 +1,16 @@
-# Article 26 Hackathon - Enterprise Time Booking System
+# Blueprint: Next.js + PostgreSQL example
 
-Welcome to the Article 26 Hackathon! This repository serves as the foundation for building an enterprise-grade time booking system for German consultant companies. The goal is to implement a comprehensive solution that allows employees to accurately track their working time while ensuring compliance with German labor laws.
+> **Blueprint branch · one example, not a requirement.**
+> This branch contains a small Next.js + PostgreSQL application from the 2025 edition of the Article26 Hackathon.
+> It shows one possible way to set up persistence, API routes, Swagger and Docker Compose.
+> The 2026 challenge and the build guide are on the [`main` branch](../../tree/main). Choose your own stack.
+
 
 ## 📋 Table of Contents
 
-- [🎯 Hackathon Goal](#-hackathon-goal)
 - [🛠️ Installation Requirements](#️-installation-requirements)
 - [🚀 Quick Start](#-quick-start)
 - [📁 Repository Structure](#-repository-structure)
-- [🎯 Getting Started with Development](#-getting-started-with-development)
-
-## 🎯 Hackathon Goal
-
-The objective of this hackathon is to develop a **time booking system** that enables:
-
-- **Daily time tracking** with time slot management
-- **Project assignment** for billable hours and internal controlling
-- **Compliance with German Working Time Law (ArbZG)** 
-- **Vacation and sick leave management**
-- **Working hour account tracking** (overtime/undertime)
-
-The complete feature backlog and user stories are available in our [GitHub Project](https://github.com/users/DanielStuewe/projects/1) which contains 15 user stories organized across 4 milestones:
-
-### 📋 Backlog Overview
-
-**Milestone 1: Basic Project Booking**
-- Book daily working time with time slots
-- Add comments to time slots  
-- Assign bookings to project accounts
-
-**Milestone 2: Advanced Project Booking**
-- Create tasks for task-mode accounts
-- Validate non-overlapping time bookings
-- Highlight conflicting bookings
-- Enforce German Working Time Law (ArbZG)
-- Batch booking operations
-
-**Milestone 3: Vacation and Sick Leave**
-- Vacation booking with balance tracking
-- Prevent vacation overbooking (30 days max)
-- Show residual vacation days
-- Full/half-day vacation options
-- Sick leave booking
-
-**Milestone 4: Working Hour Account**
-- Track overtime/undertime in working hour account
-- Enforce overtime limits (max 2 work weeks)
 
 ## 🛠️ Installation Requirements
 
@@ -107,8 +72,9 @@ Recommended IDE with excellent TypeScript and React support.
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/DanielStuewe/article26-hackathon.git
-   cd article26-hackathon
+   git clone https://github.com/DanielStuewe/article26-hackathon-2026.git
+   cd article26-hackathon-2026
+git switch blueprint
    ```
 
 2. **Start the database**
@@ -194,41 +160,3 @@ article26-hackathon/
 - PostgreSQL with Docker Compose
 - Seeding script for sample data
 - Adminer for database management
-
-## 🎯 Getting Started with Development
-
-### Team Setup (Important!)
-
-**Each team must create their own isolated workspace to avoid conflicts:**
-
-1. **Fork this repository**
-   - Go to [this repository](https://github.com/DanielStuewe/article26-hackathon)
-   - Click the "Fork" button in the top-right corner
-   - Create the fork in your team's GitHub account/organization
-
-2. **Copy the GitHub Project to your team**
-   - Visit the [original project](https://github.com/users/DanielStuewe/projects/1)
-   - Click the "⋯" menu in the top-right of the project
-   - Select "Make a copy"
-   - Choose your team's account as the destination
-   - This gives your team an independent backlog to work with
-
-3. **Clone your team's fork**
-   ```bash
-   git clone https://github.com/YOUR-TEAM/article26-hackathon.git
-   cd article26-hackathon
-   ```
-
-### Development Workflow
-
-1. **Review your team's backlog** in your copied GitHub Project
-2. **Pick a user story** to implement (start with Milestone 1)
-3. **Check the database setup** in `time-booking-hackathon/DATABASE_SETUP.md`
-4. **Explore the existing code** structure to understand the foundation
-5. **Start coding** and have fun! 🚀
-
----
-
-**Happy Hacking! 🎉**
-
-For questions or issues, please refer to the GitHub issues or create new ones in this repository.
